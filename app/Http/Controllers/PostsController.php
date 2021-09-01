@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\post;
 use App\Http\Requests\PostRequest;
-use App\Http\Resources\postResources;
+use App\Http\Resources\PostResources;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
