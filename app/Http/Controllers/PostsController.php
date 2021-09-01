@@ -32,7 +32,8 @@ class PostsController extends Controller
         $post->title=$request->title;
         $post->description=$request->description;
         $post->save();
-        return new PostResources($post);
+       // return new PostResources($post);
+        return $post;
     }
 
 }
