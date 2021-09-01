@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Requests\PostRequest;
-use App\Http\Resources\PostResources;
-
-use Illuminate\Http\Request;
 use App\Models\post;
+use App\Http\Requests\PostRequest;
+use App\Http\Resources\postResources;
+use Illuminate\Http\Request;
+
 class PostsController extends Controller
 {
      public function index()
@@ -28,12 +28,11 @@ class PostsController extends Controller
 
     public function store(PostRequest $request)
     {
-      $post=new post();
+        $post=new post();
         $post->title=$request->title;
-        $post->descreption=$request->dscreption;
+        $post->description=$request->description;
         $post->save();
+        return new PostResources($post);
+    }
 
-        return $post;
-
-   }
 }
