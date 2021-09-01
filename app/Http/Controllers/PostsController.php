@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Http\Requests\PostRequest;
-use App\Http\Resources\PostResouces;
+use App\Http\Resources\PostResources;
+
 use Illuminate\Http\Request;
 use App\Models\post;
 class PostsController extends Controller
@@ -27,13 +28,12 @@ class PostsController extends Controller
 
     public function store(PostRequest $request)
     {
-      $post=new post;
+      $post=new post();
         $post->title=$request->title;
         $post->descreption=$request->dscreption;
         $post->save();
-        return response([
-            'data' => new $post,
-        ]);
 
-    }
+        return $post;
+
+   }
 }
