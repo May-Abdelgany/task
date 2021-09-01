@@ -21,4 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('/posts',[PostsController::class,'index']);
-
+Route::get('/pagposts',[PostsController::class,'sub']);
+Route::get('/post/{post}',[PostsController::class,'show']);
+Route::post('/posts',[PostsController::class,'store']);
