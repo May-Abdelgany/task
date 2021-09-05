@@ -1,7 +1,6 @@
 <?php
-
 namespace App\Http\Resources;
-namespace App\Http\Resources\postResources;
+namespace App\Http\Resources\PostResources;
 use App\Models\post;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Request;

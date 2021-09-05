@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Resources;
-namespace App\Http\Resources\postResources;
-use App\Models\post;
+
 use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Http\Request;
-class PostResouces extends JsonResource
+
+class PostResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,11 +15,11 @@ class PostResouces extends JsonResource
     public function toArray($request)
     {
         return [
-               'title'=>$this->title,
-               'descreption'=>$this->descreption,
+
+            "id"=>$this->id,
+            "title"=>$this->title,
+            "description"=>$this->description,
+            "title_parsed"=>$this->title." ?!"
         ];
-    }
-    public function show(Request $request ,post $product){
-        return new PostResouces($product);
     }
 }
